@@ -36,8 +36,7 @@ class _HistorypageState extends State<Historypage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].id.toString()),
-                          Text(_userModel![index].username),
+                          Text(_userModel![index].msg.toString()),
                         ],
                       ),
                       const SizedBox(
@@ -46,8 +45,9 @@ class _HistorypageState extends State<Historypage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].email),
-                          Text(_userModel![index].website),
+                          Text(_userModel![index].data.tanggal.toString()),
+                          Text(_userModel![index].data.waktu.toString()),
+                          Text(_userModel![index].data.status.toString()),
                         ],
                       ),
                     ],

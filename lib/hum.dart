@@ -41,8 +41,8 @@ class _HomeState extends State<Home> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].id.toString()),
-                          Text(_userModel![index].username),
+                          //Text(_userModel![index].id.toString()),
+                          //Text(_userModel![index].username),
                         ],
                       ),
                       const SizedBox(
@@ -51,8 +51,8 @@ class _HomeState extends State<Home> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].email),
-                          Text(_userModel![index].website),
+                          //Text(_userModel![index].email),
+                          //Text(_userModel![index].website),
                         ],
                       ),
                     ],
