@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   }
 
   void _getData() async {
-    _userModel = (await ApiService().getUsers())!;
+    _userModel = (await ApiService().getHistoryabsen())!;
     Future.delayed(const Duration(seconds: 3)).then((value) => setState(() {}));
   }
 

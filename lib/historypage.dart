@@ -18,7 +18,11 @@ class _HistoryPage extends State<HistoryPage> {
   }
 
   void _getData() async {
-    _userModel = (await ApiService().getUsers())!;
+    _userModel = (await ApiService().getHistoryabsen());
+    Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
+  }
+  void _getDatapulang() async {
+    _userModel = (await ApiService().getHistoryabsen());
     Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
   }
 
@@ -38,7 +42,7 @@ class _HistoryPage extends State<HistoryPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].msg),
+                          Text(_userModel![index].tanggal.toString()),
                         ],
                       ),
                       const SizedBox(
@@ -47,7 +51,8 @@ class _HistoryPage extends State<HistoryPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].data.toString()),
+                          Text(_userModel![index].waktu.toString()),
+                          Text(_userModel![index].status.toString()),
                         ],
                       ),
                     ],
