@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_attandance/api_service.dart';
-import 'package:flutter_e_attandance/user_model.dart';
+import 'package:flutter_e_attandance/model/user_model.dart';
+import 'package:flutter_e_attandance/services/api_service.dart';
 
-class Historypage extends StatefulWidget {
-  const Historypage({Key? key}) : super(key: key);
+class HistoryPage extends StatefulWidget {
+  const HistoryPage({Key? key}) : super(key: key);
+
   @override
-  State<Historypage> createState() => _HistorypageState();
+  _HistoryPage createState() => _HistoryPage();
 }
-class _HistorypageState extends State<Historypage> {
+
+class _HistoryPage extends State<HistoryPage> {
   late List<UserModel>? _userModel = [];
   @override
   void initState() {
@@ -36,7 +38,7 @@ class _HistorypageState extends State<Historypage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].msg.toString()),
+                          Text(_userModel![index].msg),
                         ],
                       ),
                       const SizedBox(
@@ -45,9 +47,7 @@ class _HistorypageState extends State<Historypage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(_userModel![index].data.tanggal.toString()),
-                          Text(_userModel![index].data.waktu.toString()),
-                          Text(_userModel![index].data.status.toString()),
+                          Text(_userModel![index].data.toString()),
                         ],
                       ),
                     ],

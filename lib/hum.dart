@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_attandance/api_service.dart';
-import 'package:flutter_e_attandance/user_model.dart';
+import 'package:flutter_e_attandance/services/api_service.dart';
+import 'package:flutter_e_attandance/model/user_model.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
