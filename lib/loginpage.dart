@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_e_attandance/dashboard.dart';
 import 'package:flutter_e_attandance/second_screen.dart';
 
 TextEditingController _controller = TextEditingController();
@@ -14,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
     String _name;
     return Scaffold(
       body: Center(
-          child: Card(
+        child: Card(
         borderOnForeground: true,
         child: ListView(
           children: [
@@ -31,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SecondScreen()));
+                        builder: (context) => const dashboard(title: "dashboard",)));
               },
               child: const Text("Submit"),
             )

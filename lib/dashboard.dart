@@ -44,6 +44,7 @@ class _dashboardState extends State<dashboard> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dashboard'),
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

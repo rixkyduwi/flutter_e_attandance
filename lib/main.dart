@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:const dashboard(title: 'knlk',),
+      home:const LoginPage(),
     );
   }
 }
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: const TextStyle(fontFamily: 'Poppins', fontSize: 30),
             ),
-            const Text(
+            const Text( 
               'sudah',
               style: TextStyle(fontFamily: 'Oswald', fontSize: 30),
             )
