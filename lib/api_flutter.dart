@@ -1,44 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_e_attandance/model/user_model.dart';
+import 'package:flutter_e_attandance/services/api_service.dart';
 import 'package:http/http.dart' as http;
-
-Future<Album> createAlbum(String title) async {
-  final response = await http.post(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums'),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
-  );
-
-  if (response.statusCode == 201) {
-    // If the server did return a 201 CREATED response,
-    // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
-  } else {
-    // If the server did not return a 201 CREATED response,
-    // then throw an exception.
-    throw Exception('Failed to create album.');
-  }
-}
-
-class Album {
-  final int id;
-  final String title;
-
-  const Album({required this.id, required this.title});
-
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'],
-      title: json['title'],
-    );
-  }
-}
 
 void main() {
   runApp(const MyApp());
@@ -83,15 +50,20 @@ class _MyAppState extends State<MyApp> {
       children: <Widget>[
         TextField(
           controller: _controller,
-          decoration: const InputDecoration(hintText: 'Enter Title'),
+          decoration: const InputDecoration(hintText: 'Enter NIP'),
+        ),
+        TextField(
+          restorationId: "pswd",
+          controller: _controller,
+          decoration: const InputDecoration(hintText: 'Enter Password'),
         ),
         ElevatedButton(
           onPressed: () {
             setState(() {
-              _futureAlbum = createAlbum(_controller.text);
+              _futureAlbum = ApiService().createAlbum(_controller.text,_controller.text);
             });
           },
-          child: const Text('Create Data'),
+          child: const Text('Login'),
         ),
       ],
     );
@@ -102,7 +74,18 @@ class _MyAppState extends State<MyApp> {
       future: _futureAlbum,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return Text(snapshot.data!.title);
+          return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(snapshot.data!.data.nip),
+                Text(snapshot.data!.data.nama),
+                Text(snapshot.data!.data.email),
+                Text(snapshot.data!.data.gender),
+                Text(snapshot.data!.data.posisi),
+                Text(snapshot.data!.data.no_hp),
+                Text(snapshot.data!.data.ttl),
+                ]
+              );
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
         }

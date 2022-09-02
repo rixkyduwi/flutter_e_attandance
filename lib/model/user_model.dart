@@ -38,7 +38,6 @@ String userModelToJson(List<UserModel> data) =>
     );
   }
 }*/
-
 class UserModel {
   UserModel({
     required this.tanggal,
@@ -58,7 +57,6 @@ class UserModel {
   Map<String, dynamic> toJson() =>
       {"tanggal": tanggal, "waktu": waktu, "status": status};
 }
-
 /*
 class UserModel {
   String msg;
@@ -127,4 +125,49 @@ class Data {
       );
   Map<String, dynamic> toJson() =>
       {"tanggal": tanggal, "waktu": waktu, "status": status};
+}
+class Album {
+  final String msg;
+  final DataLogin data;
+
+  const Album({required this.msg, required this.data});
+
+  factory Album.fromJson(Map<String, dynamic> json) {
+    return Album(
+      data: DataLogin.fromJson(json['data']),
+      msg: json['msg'],
+    );
+  }
+}
+class DataLogin{
+  
+  final String nip;
+  final String nama;
+  final String posisi;
+  final String gender;
+  final String ttl;
+  final String email;
+  final String no_hp;
+
+  const DataLogin({
+    required this.nip, 
+    required this.nama,
+    required this.posisi,
+    required this.gender,
+    required this.ttl,
+    required this.email,
+    required this.no_hp,
+    });
+
+  factory DataLogin.fromJson(Map<String, dynamic> json) {
+    return DataLogin(
+      nip: json['nip'],
+      nama: json['nama'],
+      posisi: json['posisi'],
+      gender: json['gender'],
+      ttl: json['ttl'],
+      email: json['email'],
+      no_hp: json['no_hp'],
+    );
+  }
 }
