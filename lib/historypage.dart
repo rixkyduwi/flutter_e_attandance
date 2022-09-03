@@ -46,7 +46,7 @@ class _HistoryPage extends State<HistoryPage> {
             }),
       ]),
       SizedBox(
-        height: 572.0,
+        height: 550.0,
         width: 500.0,
         child: _userModel == null || _userModel!.isEmpty
             ? const Center(

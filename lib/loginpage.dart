@@ -14,7 +14,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     String _name;
     return Scaffold(
-      body: Center(
+      body: Container(
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(8.0),
         child: Card(
         borderOnForeground: true,
         child: ListView(
@@ -29,16 +31,13 @@ class _LoginPageState extends State<LoginPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const dashboard(title: "dashboard",)));
               },
               child: const Text("Submit"),
             )
           ],
         ),
-      )),
+      )
+      ),
     );
   }
   @override

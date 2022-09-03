@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_attandance/dashboard.dart';
 import 'package:flutter_e_attandance/loginpage.dart';
-import 'package:flutter_e_attandance/hum.dart';
-import 'package:http/http.dart';
-import 'second_screen.dart';
 
 void main() {
   runApp(const MyApp());

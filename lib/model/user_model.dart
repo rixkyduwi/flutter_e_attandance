@@ -45,8 +45,8 @@ class UserModel {
     required this.status,
   });
 
-  String tanggal ;
-  String waktu ;
+  String tanggal;
+  String waktu;
   String status;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -57,6 +57,7 @@ class UserModel {
   Map<String, dynamic> toJson() =>
       {"tanggal": tanggal, "waktu": waktu, "status": status};
 }
+
 /*
 class UserModel {
   String msg;
@@ -126,21 +127,25 @@ class Data {
   Map<String, dynamic> toJson() =>
       {"tanggal": tanggal, "waktu": waktu, "status": status};
 }
-class Album {
-  final String msg;
+
+// ignore: camel_case_types
+class login {
   final DataLogin data;
+  final String msg;
 
-  const Album({required this.msg, required this.data});
+  const login({
+    required this.msg,
+    required this.data,
+  });
 
-  factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      data: DataLogin.fromJson(json['data']),
+  factory login.fromJson(Map<String, dynamic> json) {
+    return login(
       msg: json['msg'],
+      data : DataLogin.fromJson(json["data"])
     );
   }
 }
-class DataLogin{
-  
+class DataLogin {
   final String nip;
   final String nama;
   final String posisi;
@@ -150,14 +155,14 @@ class DataLogin{
   final String no_hp;
 
   const DataLogin({
-    required this.nip, 
+    required this.nip,
     required this.nama,
     required this.posisi,
     required this.gender,
     required this.ttl,
     required this.email,
     required this.no_hp,
-    });
+  });
 
   factory DataLogin.fromJson(Map<String, dynamic> json) {
     return DataLogin(
