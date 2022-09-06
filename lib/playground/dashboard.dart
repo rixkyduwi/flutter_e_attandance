@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_e_attandance/historypage.dart';
-import 'package:flutter_e_attandance/model/user_model.dart';
+import 'package:flutter_e_attandance/model/login_model.dart';
+import 'package:flutter_e_attandance/profilepage.dart';
 
 // ignore: camel_case_types
 class dashboard extends StatefulWidget {
@@ -25,17 +26,31 @@ class _dashboardState extends State<dashboard> {
       'Index 1: Absensi',
       style: optionStyle,
     ),
+    Text(
+      'Index 1: Absensi',
+      style: optionStyle,
+    ),
   ];
+
+  // Widget elementA(int index, String token) {
+  //   if (_selectedIndex == 0) {
+  //     return const HistoryPage();
+  //   } else if (_selectedIndex == 1) {
+  //     return const Text(
+  //       'Index 1: Absensi',
+  //       style: optionStyle,
+  //     );
+  //   } else if (_selectedIndex == 2) {
+  //     return ProfilePage(token: token);
+  //   }
+  // }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
       if (_selectedIndex == 0) {
       } else if (_selectedIndex == 1) {
-        
-      } else if (_selectedIndex == 2) {
-
-      }
+      } else if (_selectedIndex == 2) {}
     });
   }
 
@@ -47,8 +62,7 @@ class _dashboardState extends State<dashboard> {
         automaticallyImplyLeading: false,
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+          child:_widgetOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

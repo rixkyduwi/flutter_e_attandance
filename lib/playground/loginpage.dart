@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_e_attandance/dashboard.dart';
-import 'package:flutter_e_attandance/second_screen.dart';
+import 'package:flutter_e_attandance/playground/dashboard.dart';
+import 'package:flutter_e_attandance/playground/second_screen.dart';
 
 TextEditingController _controller = TextEditingController();
 
