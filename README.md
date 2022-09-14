@@ -1,6 +1,6 @@
 # Flutter E Attandance
 
-A Flutter project.
+absensi online mobile
 
 ## Getting Started
 
